@@ -3,7 +3,11 @@ title: Github Page + Hexo メモ
 date: 2020-03-05 00:18:35
 category: [Blog, Hexo]
 tags:
+  - nodejs
+  - fontend
+thumbnail: https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-2-hexo.jpg
 ---
+![](https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-2-hexo.jpg)
 
 ### Hexo Installation
 #### Node.js、hexo-cli 環境構築

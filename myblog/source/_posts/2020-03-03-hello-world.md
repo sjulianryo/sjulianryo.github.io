@@ -2,9 +2,9 @@
 title: Hello World
 date: 2020-03-03 10:24:00
 category: [Blog, Hexo]
-thumbnail: https://cdn.jsdelivr.net/gh/sjulianryo/blogPics//blogImg/thumb-1-helloworld.jpg
+thumbnail: https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-1-helloworld.webp
 ---
-![](https://cdn.jsdelivr.net/gh/sjulianryo/blogPics//blogImg/thumb-1-helloworld.jpg "You stupid human")
+![](https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-1-helloworld.webp "奇怪的知識又増加了")
 
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 

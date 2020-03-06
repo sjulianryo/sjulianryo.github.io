@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: julianblog
+subtitle: 'Take it easy'
+description: 'Just another BB world'
 keywords:
-author: John Doe
+author: Julian Ryo
 language: en
-timezone: ''
+timezone: 'Asia/Tokyo'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
