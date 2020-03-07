@@ -79,10 +79,13 @@ $ git clone https://github.com/{username}/{username}.github.io.git
 $ cd {username}.github.io.git
 $ git submodule init
 $ git submodule update
+$ cd myblog/themes/hueman
+$ git checkout master # or 使っている branch
 ```
 
 あとは themes/hueman を別の Git レポジトリで管理すれば良い
 （ブランチ変更とか、コミットプッシュとか）
+毎回 checkout しないといけないのはちょっとめんどいけど…
 
 そしてテーマの作者がいろいろアップデートしてくれて取り入れたいときは
 どうも `upstream` というのを取り入れてマージする感じらしい
