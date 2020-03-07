@@ -1,3 +1,5 @@
 [submodule "myblog/themes/hueman"]
 	path = myblog/themes/hueman
 	url = https://github.com/sjulianryo/hexo-theme-hueman.git
+	branch = julianblog
+	update = rebase
