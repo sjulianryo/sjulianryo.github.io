@@ -1,5 +1,5 @@
 ---
-title: Github Page + Hexo でブログのメモ(1)
+title: Github + Hexo でブログのメモ(1)
 date: 2020-03-05 00:18:35
 category: [Blog, Hexo]
 tags:

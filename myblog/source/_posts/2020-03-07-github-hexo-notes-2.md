@@ -1,5 +1,5 @@
 ---
-title: Github Page + Hexo でブログのメモ(2)
+title: Github + Hexo でブログのメモ(2)
 date: 2020-03-07 00:07:44
 category: [Blog, Hexo]
 tags:
@@ -20,7 +20,7 @@ thumbnail: https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-3-theme
 
 [https://hexo.io/themes/](https://hexo.io/themes/) 公式のテーマページで色々探った結果、
 [hexo-theme-human](https://github.com/ppoffice/hexo-theme-hueman) が一番良いと感じてこれにした。
-最近結構チェックしている[マナブ](https://manablog.org)さんのスタイルにも似てて簡潔で写真もあって、
+最近結構チェックしている[**マナブさん**](https://manablog.org)のスタイルにも似てて簡潔で写真もあって、
 多分そのうち飽きるけどとりあえずこれで。
 （もちろん本当は自分で作るのが一番だが…）
 
@@ -105,7 +105,8 @@ $ git branch -a
   remotes/upstream/site
 ```
 
-たぶんこんな感じになったら `upstream` としてオリジナルのテーマレポジトリをリンクしている
+たぶんこんな感じになったら `upstream` としてオリジナルの
+テーマレポジトリをリンクしている
 アップデートの内容を取り入れたいときはそれをマージする
 
 ```shell command-line
