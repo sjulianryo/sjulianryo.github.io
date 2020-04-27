@@ -53,7 +53,55 @@ permalink: :year/:month/:day/:title/
 これで `hexo new post` のときにタイトルだけ入れれば
 自動的日付もつけてくれるし、生成されるリンクも年月日ごとに分かれる。
 
+### 日本語フォント追加
 
+最初の設定だと中華フォントになるため、テーマの中身をいじって日本語フォントを追加。
+テーマによっては場所といじり方が違うので、ここでは Hueman というテーマを例に。
+
+場所は `themes/hueman/source/css/_variables.styl`
+Mac の日本語フォント Hiragino Kaku と Windows の日本語フォント Meiryo を追加
+個人的には Meiryo ui が好きなので優先順的には Meiryo UI を先にした。
+
+```css _variables.styl
+font-sans = "Titillium Web", "Helvetica Neue", Helvetica, Arial, 'Hiragino Kaku Gothic ProN', 'meiryo ui', meiryo, sans-serif
+```
+
+> Google Fonts を使う場合
+
+あとあと考えたら、やっぱ環境によってフォントが違うのがいやで、
+Google Fonts を導入することにした。
+
+Google Fonts のページ [https://fonts.google.com/](https://fonts.google.com/) にアクセスして、
+好きなフォントと太さを選択し、右側に出てくるサイドバーの「Embed」を選ぶことで、
+埋め込む css のコートと、利用する際の font-family 表記を生成してくれる。
+
+ここでテーマの設定ファイルに二箇所をいじることが必要になってくる
+- 読み込む用の記載をいれる場所
+- 上の `_variables.styl` にそれを使うと記載
+
+まずは `/themes/hueman/layout/common/head.ejs` に Google Fonts を読み込む記載を入れる
+デフォルトで入っていた `titillium-web` というフォントの記載があったのでそれを参考に
+
+```js head.ejs
+<%- css('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap" rel="stylesheet') %>
+```
+
+次に上と同様に `themes/hueman/source/css/_variables.styl` に font-family の設定を追加
+```css _variables.styl
+font-sans = 'Noto Sans JP', '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Verdana, 'メイリオ', Meiryo, sans-serif
+```
+
+スペースを節約のためにいらないデフォルトで入っていた `source/libs/titillium-web` も削除した
+
+
+## Google Analytics
+Hueman がデフォルトで設定の場所を用意してくれたので、単純に `themes/hueman/_config.yml` に ID を記載して終わり
+
+
+Blog を書くのに最低限の設定はこんぐらいかなと。
+あとはゆくゆく思いついたらまた追記していく。
+例えば Build-pipeline を作ってみて、Browser で Github で編集するだけで記事更新できるようにするとか。
+いまのところはまず記事をいっぱい書くところだが…
 
 
 ## References
