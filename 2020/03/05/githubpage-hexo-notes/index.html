@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Github + Hexo でブログのメモ(1) | 得閒飲茶</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="nodejs,fontend" />
+    
+    <meta name="description" content="一応公式サイトも貼っとく。 https:&#x2F;&#x2F;pages.github.com&#x2F;https:&#x2F;&#x2F;hexo.io&#x2F; Hexo InstallationNode.js、hexo-cli 環境構築Windows は素直に msi を落として インストールか、choco install nodejs-lts か。Mac の場合は brew で、nodebrew を使ってもいいし。 その場で検索すればすぐ出">
+<meta name="keywords" content="nodejs,fontend">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github + Hexo でブログのメモ(1)">
+<meta property="og:url" content="https:&#x2F;&#x2F;julianblog.com&#x2F;2020&#x2F;03&#x2F;05&#x2F;githubpage-hexo-notes&#x2F;index.html">
+<meta property="og:site_name" content="得閒飲茶">
+<meta property="og:description" content="一応公式サイトも貼っとく。 https:&#x2F;&#x2F;pages.github.com&#x2F;https:&#x2F;&#x2F;hexo.io&#x2F; Hexo InstallationNode.js、hexo-cli 環境構築Windows は素直に msi を落として インストールか、choco install nodejs-lts か。Mac の場合は brew で、nodebrew を使ってもいいし。 その場で検索すればすぐ出">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;sjulianryo&#x2F;blogPics&#x2F;blogImg&#x2F;thumb-2-hexo.jpg">
+<meta property="og:updated_time" content="2020-07-15T15:59:28.746Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;gh&#x2F;sjulianryo&#x2F;blogPics&#x2F;blogImg&#x2F;thumb-2-hexo.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/images/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-159948574-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">Take it easy</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/">Blog</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Blog/Hexo/">Hexo</a></li></ul></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Blog/Hexo/">Hexo</a>
+    </h1>
+</div>
+
+                        <div class="main-body-content">
+                            <article id="post-githubpage-hexo-notes" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Github + Hexo でブログのメモ(1)
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2020/03/05/githubpage-hexo-notes/" class="article-date">
+         <time datetime="2020-03-04T15:18:35.000Z" itemprop="datePublished">2020-03-05</time>
+      </a>
+    </div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/fontend/" rel="tag">fontend</a>, <a class="tag-link" href="/tags/nodejs/" rel="tag">nodejs</a>
+    </div>
+
+                
+
+                
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-2-hexo.jpg" alt=""></p>
+<p>一応公式サイトも貼っとく。</p>
+<p><a href="https://pages.github.com/" target="_blank" rel="noopener">https://pages.github.com/</a><br><a href="https://hexo.io/" target="_blank" rel="noopener">https://hexo.io/</a></p>
+<h2 id="Hexo-Installation"><a href="#Hexo-Installation" class="headerlink" title="Hexo Installation"></a>Hexo Installation</h2><h3 id="Node-js、hexo-cli-環境構築"><a href="#Node-js、hexo-cli-環境構築" class="headerlink" title="Node.js、hexo-cli 環境構築"></a>Node.js、hexo-cli 環境構築</h3><p>Windows は素直に <a href="https://nodejs.org/en/" target="_blank" rel="noopener">msi を落として</a> インストールか、<br><code>choco install nodejs-lts</code> か。<br>Mac の場合は <code>brew</code> で、<code>nodebrew</code> を使ってもいいし。</p>
+<p>その場で検索すればすぐ出てくる。</p>
+<p>できたら <code>hexo-cli</code> を入れる</p>
+<figure class="highlight shell"><figcaption><span>command-line</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-cli -g</span></span><br></pre></td></tr></table></figure>
+
+<p><code>hexo</code> だけ叩いて説明が表示されたら OK でしょう。</p>
+<blockquote>
+<p>Visual Studio Code の Remote-Container を使う場合</p>
+</blockquote>
+<p>Remote-Container の使い方は公式マニュアル<br><a href="https://code.visualstudio.com/docs/remote/containers" target="_blank" rel="noopener">Developing inside a Container</a> でチェック。</p>
+<p>macOS のユーザフォルダに変な .xxx の隠れフォルダが<br>いっぱいできるのいやだというやや潔癖症(?)的な理由で<br>検索して見つけたけど、使ってみたらわりと便利。<br>ただし、性能の良いマシンが必要、配置ファイルもちょこちょこ<br>手入れがいるからだるさはある。<br>わいみたいな会社＋家で 10 台近くマシン持っている人にとっては必須かも？</p>
+<p>前まではコンテナを動かしながら Port Forward できたが、<br>最近もう一回やてみたらメニューが消えてしまった(おれだけ?)ので、<br><code>devcontainer.json</code> で指定する必要がある。</p>
+<figure class="highlight js"><figcaption><span>devcontainer.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="string">"forwardPorts"</span>: [<span class="number">4000</span>],</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="Git-初期化"><a href="#Git-初期化" class="headerlink" title="Git 初期化"></a>Git 初期化</h3><p><code>{username}.github.io</code> でレポジトリ作ってしばらく待てれば<br>Github Page が見れるようになる。<br>デフォルトで表示されるのは master ブランチの中身。<br>Hexo の設定ファイルとかは Hexo ブランチで持ち、<br><code>hexo-deployer-git</code>で master ブランチでやるのが一番自分的には楽かな。<br>Travis CI 組んでいる人もいるでしょうけどまだ良さがわからないので<br>いまのところはこれで。</p>
+<p>hexo ブランチを作るからブログの初期化まで</p>
+<figure class="highlight shell"><figcaption><span>command-line</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git branch hexo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> git switch hexo</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo init myblog <span class="comment">#ここの名前はフォルダ名になる</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> myblog</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> npm install hexo-deployer-git -s</span></span><br></pre></td></tr></table></figure>
+
+<p><code>hexo s</code>を叩いて、<code>http://localhost:4000</code>が開けば OK。</p>
+<h3 id="hexo-deployer-git-でデプロイしてみる"><a href="#hexo-deployer-git-でデプロイしてみる" class="headerlink" title="hexo-deployer-git でデプロイしてみる"></a>hexo-deployer-git でデプロイしてみる</h3><p>ブログフォルダにある <code>_config.yml</code> の中のデプロイ方式を設定</p>
+<figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">…</span></span><br><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&#123;username&#125;/&#123;username&#125;.github.io</span> <span class="comment">#使われるレポジトリ</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br><span class="line"><span class="string">…</span></span><br></pre></td></tr></table></figure>
+<p>編集終わったら <code>hexo d</code> で試してみる。</p>
+<p>エラーが出てなく、しばらく時間おけば<br>https://{username}.github.io にリリースされているはず。</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://julianblog.com/2020/03/05/githubpage-hexo-notes/" data-id="ckcoum08z0002ilkw86gxdk7o" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "author": {
+            "@type": "Person",
+            "name": "Lor-My-Guy"
+        },
+        "headline": "Github + Hexo でブログのメモ(1)",
+        "image": "https://julianblog.comhttps://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-2-hexo.jpg",
+        "keywords": "nodejs fontend",
+        "genre": "Blog Hexo",
+        "datePublished": "2020-03-05",
+        "dateCreated": "2020-03-05",
+        "dateModified": "2020-07-16",
+        "url": "https://julianblog.com/2020/03/05/githubpage-hexo-notes/",
+        "description": "
+一応公式サイトも貼っとく。
+https://pages.github.com/https://hexo.io/
+Hexo InstallationNode.js、hexo-cli 環境構築Windows は素直に msi を落として インストールか、choco install nodejs-lts か。Mac の場合は brew で、nodebrew を使ってもいいし。
+その場で検索すればすぐ出",
+        "wordCount": 213
+    }
+</script>
+
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+    
+    </section>
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="https://twitter.com/sjulianryo" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/sjulianryo" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2020/03/07/github-hexo-notes-2/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Github + Hexo でブログのメモ(2)
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2020/03/03/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Hello World</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/07/github-hexo-notes-3/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-4-fonts.jpg)" alt="Github + Hexo でブログのメモ(3)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Hexo/">Hexo</a></p>
+                            <p class="item-title"><a href="/2020/03/07/github-hexo-notes-3/" class="title">Github + Hexo でブログのメモ(3)</a></p>
+                            <p class="item-date"><time datetime="2020-03-07T09:11:22.000Z" itemprop="datePublished">2020-03-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/07/github-hexo-notes-2/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-3-theme.jpg)" alt="Github + Hexo でブログのメモ(2)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Hexo/">Hexo</a></p>
+                            <p class="item-title"><a href="/2020/03/07/github-hexo-notes-2/" class="title">Github + Hexo でブログのメモ(2)</a></p>
+                            <p class="item-date"><time datetime="2020-03-06T15:07:44.000Z" itemprop="datePublished">2020-03-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/05/githubpage-hexo-notes/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-2-hexo.jpg)" alt="Github + Hexo でブログのメモ(1)" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Hexo/">Hexo</a></p>
+                            <p class="item-title"><a href="/2020/03/05/githubpage-hexo-notes/" class="title">Github + Hexo でブログのメモ(1)</a></p>
+                            <p class="item-date"><time datetime="2020-03-04T15:18:35.000Z" itemprop="datePublished">2020-03-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/03/03/hello-world/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-1-helloworld.jpg)" alt="Hello World" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Blog/">Blog</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Blog/Hexo/">Hexo</a></p>
+                            <p class="item-title"><a href="/2020/03/03/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2020-03-03T01:24:00.000Z" itemprop="datePublished">2020-03-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/">Blog</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Blog/Hexo/">Hexo</a><span class="category-list-count">4</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cdn/" rel="tag">cdn</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fontend/" rel="tag">fontend</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fonts/" rel="tag">fonts</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/cdn/" style="font-size: 10px;">cdn</a> <a href="/tags/fontend/" style="font-size: 20px;">fontend</a> <a href="/tags/fonts/" style="font-size: 10px;">fonts</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/nodejs/" style="font-size: 15px;">nodejs</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io" target="_blank" rel="noopener">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;" target="_blank" rel="noopener"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 Lor-My-Guy</p>
+                
+                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
+                
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://julianblog.com/2020/03/05/githubpage-hexo-notes/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
