@@ -91,18 +91,43 @@ Google Fonts のページ [https://fonts.google.com/](https://fonts.google.com/)
 font-sans = 'Noto Sans JP', '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Verdana, 'メイリオ', Meiryo, sans-serif
 ```
 
-スペースを節約のためにいらないデフォルトで入っていた `source/libs/titillium-web` も削除した
+スペースを節約のためにいらないデフォルトで入っていた `source/libs/titillium-web` 
+も削除した
 
+## CDN
+あとは使う写真をどこに保存しるかだね。普通に HEXO とレポジトリに入れても良いが、
+毎回 clone のとき多分絶対死ぬ。
+無料で使いやすくてあまり消えてしまう心配がない良い CDN っぽいものないかな…
+
+あった。
+[jsDeliver](https://www.jsdelivr.com/) がとってもすばらしい。
+使い方も簡単：
+- 写真や js/css など CDN で配布したいものを入れる用の Github レポジトリ作成
+- ファイルを master ブランチにアップロード（Web 経由で OK）
+- あとはルールにしたがって画像の URL を生成（例えばこの記事のサムネイル）：
+https://cdn.jsdelivr.net/gh/sjulianryo/blogPics/blogImg/thumb-4-fonts.jpg
+
+(解説)
+https://cdn.jsdelivr.net/gh/（ここまで固定） + {github_username} / {repository_name} / {folder_name}（あれば）/ {file_name}
+
+これで jsdelivr の cdn から github のレポジトリにある画像ファイルを
+ブログに出すことができるようになった。
+原理はなんとなく想像できるが、
+詳しいことは気力があれば調べる…
+長く使い続けられると良いね！
 
 ## Google Analytics
-Hueman がデフォルトで設定の場所を用意してくれたので、単純に `themes/hueman/_config.yml` に ID を記載して終わり
+Hueman がデフォルトで設定の場所を用意してくれたので、
+単純に `themes/hueman/_config.yml` に ID を記載して終わり
 
 
 Blog を書くのに最低限の設定はこんぐらいかなと。
 あとはゆくゆく思いついたらまた追記していく。
-例えば Build-pipeline を作ってみて、Browser で Github で編集するだけで記事更新できるようにするとか。
+例えば Build-pipeline を作ってみて、
+Browser で Github で編集するだけで記事更新できるようにするとか。
 いまのところはまず記事をいっぱい書くところだが…
 
 
 ## References
 - [禾七博客 - jekyll-hexo-hugo 互相遷移時関於永久鏈接的問題(中国語)](https://leay.net/2019/09/23/jekyll-hexo-hugo/)
+- [ChrAlpha 的幻想郷 - jsDelivr | 免費加速図片等網站静態資源(中国語)](https://blog.ichr.me/post/use-jsdelivr-speed-up-static-files-visits/)
