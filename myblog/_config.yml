@@ -4,16 +4,16 @@
 
 # Site
 title: 得閒飲茶
-subtitle: 'Take it easy'
-description: 'Just another BB world'
+subtitle: 'Let's go yumcha'
+description: '中国・日本関連のIT技術・ビジネス・生活情報を適当に発信します'
 keywords:
-author: Lor-My-Guy
+author: 糯米鶏
 language: en
 timezone: 'Asia/Tokyo'
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://julianblog.com/
+url: https://yumcha.work/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
